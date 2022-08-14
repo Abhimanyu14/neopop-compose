@@ -22,6 +22,8 @@ import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.unit.dp
 import com.makeappssimple.abhimanyu.neopopcompose.android.ui.component.NeoPopCheckBox
 import com.makeappssimple.abhimanyu.neopopcompose.android.ui.component.NeoPopCheckBoxSample
+import com.makeappssimple.abhimanyu.neopopcompose.android.ui.component.NeoPopElevatedButton
+import com.makeappssimple.abhimanyu.neopopcompose.android.ui.component.NeoPopElevatedStrokeButton
 import com.makeappssimple.abhimanyu.neopopcompose.android.ui.component.NeoPopFlatButton
 import com.makeappssimple.abhimanyu.neopopcompose.android.ui.component.NeoPopFlatStrokeButton
 import com.makeappssimple.abhimanyu.neopopcompose.android.ui.component.NeoPopRadioButton
@@ -181,6 +183,46 @@ fun NeoPopBody() {
             )
             NeoPopFlatStrokeButton(
                 text = "Flat Stroke Button",
+                onClick = {},
+            )
+        }
+        Column(
+            modifier = Modifier
+                .padding(
+                    horizontal = 16.dp,
+                    vertical = 8.dp,
+                ),
+        ) {
+            Text(
+                text = "NeoPop Elevated Button",
+                fontWeight = FontWeight.Bold,
+                modifier = Modifier
+                    .padding(
+                        bottom = 8.dp,
+                    ),
+            )
+            NeoPopElevatedButton(
+                text = "Elevated Button",
+                onClick = {},
+            )
+        }
+        Column(
+            modifier = Modifier
+                .padding(
+                    horizontal = 16.dp,
+                    vertical = 8.dp,
+                ),
+        ) {
+            Text(
+                text = "NeoPop Elevated Stroke Button",
+                fontWeight = FontWeight.Bold,
+                modifier = Modifier
+                    .padding(
+                        bottom = 8.dp,
+                    ),
+            )
+            NeoPopElevatedStrokeButton(
+                text = "Elevated Stroke Button",
                 onClick = {},
             )
         }

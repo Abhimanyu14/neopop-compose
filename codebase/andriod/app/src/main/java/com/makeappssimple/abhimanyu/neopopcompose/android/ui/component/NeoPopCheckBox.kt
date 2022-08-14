@@ -46,10 +46,10 @@ fun NeoPopCheckBoxSample() {
         NeoPopCheckBox(
             checked = checked,
             onCheckedChange = onCheckedChange,
-            size = 300.dp,
-            borderWidth = 30.dp,
+            size = 150.dp,
+            borderWidth = 15.dp,
             checkedImageVector = Icons.Rounded.Done,
-            animationDurationInMillis = 3000,
+            animationDurationInMillis = 1500,
         )
     }
 }
@@ -107,7 +107,7 @@ fun NeoPopCheckBox(
                     initialValue = strokeWidth,
                     targetValue = strokeWidthCheckedValue,
                     animationSpec = tween(
-                        durationMillis = (animationDurationInMillis * ((strokeWidthCheckedValue - strokeWidth) / (strokeWidthCheckedValue - strokeWidthDefaultValue))).toInt(),
+                        durationMillis = ((animationDurationInMillis / 2) * ((strokeWidthCheckedValue - strokeWidth) / (strokeWidthCheckedValue - strokeWidthDefaultValue))).toInt(),
                         easing = easing,
                     ),
                 ) { value, _ ->
@@ -117,7 +117,7 @@ fun NeoPopCheckBox(
                     initialValue = checkedIndicatorAlpha,
                     targetValue = checkedIndicatorAlphaCheckedValue,
                     animationSpec = tween(
-                        durationMillis = (animationDurationInMillis * ((checkedIndicatorAlphaCheckedValue - checkedIndicatorAlpha) / (checkedIndicatorAlphaCheckedValue - checkedIndicatorAlphaDefaultValue))).toInt(),
+                        durationMillis = ((animationDurationInMillis / 2) * ((checkedIndicatorAlphaCheckedValue - checkedIndicatorAlpha) / (checkedIndicatorAlphaCheckedValue - checkedIndicatorAlphaDefaultValue))).toInt(),
                         easing = easing,
                     ),
                 ) { value, _ ->
@@ -130,7 +130,7 @@ fun NeoPopCheckBox(
                     initialValue = checkedIndicatorAlpha,
                     targetValue = checkedIndicatorAlphaDefaultValue,
                     animationSpec = tween(
-                        durationMillis = (animationDurationInMillis * ((checkedIndicatorAlpha - checkedIndicatorAlphaDefaultValue) / ((checkedIndicatorAlphaCheckedValue - checkedIndicatorAlphaDefaultValue)))).toInt(),
+                        durationMillis = ((animationDurationInMillis / 2) * ((checkedIndicatorAlpha - checkedIndicatorAlphaDefaultValue) / ((checkedIndicatorAlphaCheckedValue - checkedIndicatorAlphaDefaultValue)))).toInt(),
                         easing = easing,
                     ),
                 ) { value, _ ->
@@ -140,7 +140,7 @@ fun NeoPopCheckBox(
                     initialValue = strokeWidth,
                     targetValue = strokeWidthDefaultValue,
                     animationSpec = tween(
-                        durationMillis = (animationDurationInMillis * ((strokeWidth - strokeWidthDefaultValue) / (strokeWidthCheckedValue - strokeWidthDefaultValue))).toInt(),
+                        durationMillis = ((animationDurationInMillis / 2) * ((strokeWidth - strokeWidthDefaultValue) / (strokeWidthCheckedValue - strokeWidthDefaultValue))).toInt(),
                         easing = easing,
                     ),
                 ) { value, _ ->

@@ -38,10 +38,10 @@ fun NeoPopRadioButtonSample() {
         NeoPopRadioButton(
             selected = selected,
             onSelectionChange = onSelectionChange,
-            size = 300.dp,
-            borderWidth = 15.dp,
-            selectionWidth = 75.dp,
-            animationDurationInMillis = 3000,
+            size = 150.dp,
+            borderWidth = 7.dp,
+            selectionWidth = 43.dp,
+            animationDurationInMillis = 1500,
         )
     }
 }
