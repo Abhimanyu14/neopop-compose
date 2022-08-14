@@ -23,6 +23,7 @@ import androidx.compose.ui.unit.dp
 import com.makeappssimple.abhimanyu.neopopcompose.android.ui.component.NeoPopCheckBox
 import com.makeappssimple.abhimanyu.neopopcompose.android.ui.component.NeoPopCheckBoxSample
 import com.makeappssimple.abhimanyu.neopopcompose.android.ui.component.NeoPopFlatButton
+import com.makeappssimple.abhimanyu.neopopcompose.android.ui.component.NeoPopFlatStrokeButton
 import com.makeappssimple.abhimanyu.neopopcompose.android.ui.component.NeoPopRadioButton
 import com.makeappssimple.abhimanyu.neopopcompose.android.ui.component.NeoPopRadioButtonSample
 
@@ -151,7 +152,7 @@ fun NeoPopBody() {
                 ),
         ) {
             Text(
-                text = "NeoPop FlatButton",
+                text = "NeoPop Flat Button",
                 fontWeight = FontWeight.Bold,
                 modifier = Modifier
                     .padding(
@@ -160,6 +161,26 @@ fun NeoPopBody() {
             )
             NeoPopFlatButton(
                 text = "Flat Button",
+                onClick = {},
+            )
+        }
+        Column(
+            modifier = Modifier
+                .padding(
+                    horizontal = 16.dp,
+                    vertical = 8.dp,
+                ),
+        ) {
+            Text(
+                text = "NeoPop Flat Stroke Button",
+                fontWeight = FontWeight.Bold,
+                modifier = Modifier
+                    .padding(
+                        bottom = 8.dp,
+                    ),
+            )
+            NeoPopFlatStrokeButton(
+                text = "Flat Stroke Button",
                 onClick = {},
             )
         }

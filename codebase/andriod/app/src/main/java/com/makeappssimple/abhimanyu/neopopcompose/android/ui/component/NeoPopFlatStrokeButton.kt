@@ -17,22 +17,24 @@ import androidx.compose.ui.Modifier
 import androidx.compose.ui.geometry.Offset
 import androidx.compose.ui.geometry.Size
 import androidx.compose.ui.graphics.Color
+import androidx.compose.ui.graphics.drawscope.Stroke
 import androidx.compose.ui.semantics.Role
 import androidx.compose.ui.text.AnnotatedString
 import androidx.compose.ui.text.ExperimentalTextApi
 import androidx.compose.ui.text.TextLayoutResult
+import androidx.compose.ui.text.TextStyle
 import androidx.compose.ui.text.drawText
 import androidx.compose.ui.text.rememberTextMeasurer
 import androidx.compose.ui.unit.Dp
 import androidx.compose.ui.unit.dp
 
 @Composable
-fun NeoPopFlatButtonSample() {
+fun NeoPopFlatStrokeButtonSample() {
     Box(
         contentAlignment = Alignment.Center,
         modifier = Modifier.fillMaxWidth(),
     ) {
-        NeoPopFlatButton(
+        NeoPopFlatStrokeButton(
             text = "Flat Button",
             onClick = {},
         )
@@ -40,7 +42,7 @@ fun NeoPopFlatButtonSample() {
 }
 
 @Composable
-fun NeoPopFlatButton(
+fun NeoPopFlatStrokeButton(
     text: String,
     onClick: () -> Unit,
 ) {
@@ -63,7 +65,7 @@ fun NeoPopFlatButton(
             onClick = onClick,
             role = Role.Button,
         )
-    NeoPopFlatButtonView(
+    NeoPopFlatStrokeButtonView(
         text = text,
         modifier = modifier,
         depth = depth,
@@ -72,13 +74,14 @@ fun NeoPopFlatButton(
 
 @OptIn(ExperimentalTextApi::class)
 @Composable
-private fun NeoPopFlatButtonView(
+private fun NeoPopFlatStrokeButtonView(
     text: String,
     modifier: Modifier = Modifier,
     width: Dp = 200.dp,
     height: Dp = 40.dp,
     depth: Dp = 4.dp,
 ) {
+    val strokeWidth = 2.dp
     val textMeasurer = rememberTextMeasurer()
     val textLayoutResult: TextLayoutResult = textMeasurer.measure(
         text = AnnotatedString(
@@ -105,14 +108,28 @@ private fun NeoPopFlatButtonView(
             ),
         )
         drawRect(
-            color = Color.White,
+            color = Color.Black,
             topLeft = Offset(
-                x = depth.toPx(),
-                y = depth.toPx(),
+                x = depth.toPx() + strokeWidth.toPx(),
+                y = depth.toPx() + strokeWidth.toPx(),
             ),
             size = Size(
-                width = (width - depth).toPx(),
-                height = (height - depth).toPx(),
+                width = (width - depth - (strokeWidth * 2)).toPx(),
+                height = (height - depth - (strokeWidth * 2)).toPx(),
+            ),
+        )
+        drawRect(
+            color = Color.White,
+            topLeft = Offset(
+                x = depth.toPx() + (strokeWidth / 2).toPx(),
+                y = depth.toPx() + (strokeWidth / 2).toPx(),
+            ),
+            size = Size(
+                width = (width - depth - (strokeWidth)).toPx(),
+                height = (height - depth - (strokeWidth)).toPx(),
+            ),
+            style = Stroke(
+                width = strokeWidth.toPx(),
             ),
         )
         drawText(
@@ -121,6 +138,9 @@ private fun NeoPopFlatButtonView(
             topLeft = Offset(
                 x = ((width.toPx() - textSize.width) / 2) + depth.toPx(),
                 y = ((height.toPx() - textSize.height) / 2) + depth.toPx(),
+            ),
+            style = TextStyle(
+                color = Color.White,
             ),
         )
     }
