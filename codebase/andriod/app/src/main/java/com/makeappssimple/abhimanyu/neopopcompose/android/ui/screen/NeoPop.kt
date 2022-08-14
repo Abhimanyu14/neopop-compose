@@ -4,11 +4,11 @@ import androidx.compose.foundation.background
 import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.layout.Box
 import androidx.compose.foundation.layout.Column
-import androidx.compose.foundation.layout.Row
 import androidx.compose.foundation.layout.fillMaxSize
 import androidx.compose.foundation.layout.padding
 import androidx.compose.foundation.rememberScrollState
 import androidx.compose.foundation.verticalScroll
+import androidx.compose.material.Button
 import androidx.compose.material.Checkbox
 import androidx.compose.material.RadioButton
 import androidx.compose.material.Text
@@ -22,6 +22,7 @@ import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.unit.dp
 import com.makeappssimple.abhimanyu.neopopcompose.android.ui.component.NeoPopCheckBox
 import com.makeappssimple.abhimanyu.neopopcompose.android.ui.component.NeoPopCheckBoxSample
+import com.makeappssimple.abhimanyu.neopopcompose.android.ui.component.NeoPopFlatButton
 import com.makeappssimple.abhimanyu.neopopcompose.android.ui.component.NeoPopRadioButton
 import com.makeappssimple.abhimanyu.neopopcompose.android.ui.component.NeoPopRadioButtonSample
 
@@ -59,10 +60,8 @@ fun NeoPopBody() {
             .spacedBy(
                 space = 8.dp,
             ),
-        horizontalAlignment = Alignment.CenterHorizontally,
     ) {
-        Row(
-            verticalAlignment = Alignment.CenterVertically,
+        Column(
             modifier = Modifier
                 .padding(
                     horizontal = 16.dp,
@@ -73,8 +72,8 @@ fun NeoPopBody() {
                 text = "NeoPop CheckBox",
                 fontWeight = FontWeight.Bold,
                 modifier = Modifier
-                    .weight(
-                        weight = 1F,
+                    .padding(
+                        bottom = 8.dp,
                     ),
             )
             NeoPopCheckBox(
@@ -82,8 +81,7 @@ fun NeoPopBody() {
                 onCheckedChange = onCheckedChange,
             )
         }
-        Row(
-            verticalAlignment = Alignment.CenterVertically,
+        Column(
             modifier = Modifier
                 .padding(
                     horizontal = 16.dp,
@@ -94,8 +92,8 @@ fun NeoPopBody() {
                 text = "Material CheckBox",
                 fontWeight = FontWeight.Bold,
                 modifier = Modifier
-                    .weight(
-                        weight = 1F,
+                    .padding(
+                        bottom = 8.dp,
                     ),
             )
             Checkbox(
@@ -103,8 +101,7 @@ fun NeoPopBody() {
                 onCheckedChange = onCheckedChange,
             )
         }
-        Row(
-            verticalAlignment = Alignment.CenterVertically,
+        Column(
             modifier = Modifier
                 .padding(
                     horizontal = 16.dp,
@@ -115,8 +112,8 @@ fun NeoPopBody() {
                 text = "NeoPop RadioButton",
                 fontWeight = FontWeight.Bold,
                 modifier = Modifier
-                    .weight(
-                        weight = 1F,
+                    .padding(
+                        bottom = 8.dp,
                     ),
             )
             NeoPopRadioButton(
@@ -124,8 +121,7 @@ fun NeoPopBody() {
                 onSelectionChange = onSelectionChange,
             )
         }
-        Row(
-            verticalAlignment = Alignment.CenterVertically,
+        Column(
             modifier = Modifier
                 .padding(
                     horizontal = 16.dp,
@@ -136,8 +132,8 @@ fun NeoPopBody() {
                 text = "Material RadioButton",
                 fontWeight = FontWeight.Bold,
                 modifier = Modifier
-                    .weight(
-                        weight = 1F,
+                    .padding(
+                        bottom = 8.dp,
                     ),
             )
             RadioButton(
@@ -146,6 +142,47 @@ fun NeoPopBody() {
                     onSelectionChange(!selected)
                 },
             )
+        }
+        Column(
+            modifier = Modifier
+                .padding(
+                    horizontal = 16.dp,
+                    vertical = 8.dp,
+                ),
+        ) {
+            Text(
+                text = "NeoPop FlatButton",
+                fontWeight = FontWeight.Bold,
+                modifier = Modifier
+                    .padding(
+                        bottom = 8.dp,
+                    ),
+            )
+            NeoPopFlatButton(
+                text = "Flat Button",
+                onClick = {},
+            )
+        }
+        Column(
+            modifier = Modifier
+                .padding(
+                    horizontal = 16.dp,
+                    vertical = 8.dp,
+                ),
+        ) {
+            Text(
+                text = "Material Button",
+                fontWeight = FontWeight.Bold,
+                modifier = Modifier
+                    .padding(
+                        bottom = 8.dp,
+                    ),
+            )
+            Button(
+                onClick = { },
+            ) {
+                Text("Material Button")
+            }
         }
         NeoPopCheckBoxSample()
         NeoPopRadioButtonSample()

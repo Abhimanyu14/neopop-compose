@@ -6,6 +6,8 @@ import androidx.compose.animation.core.tween
 import androidx.compose.foundation.Canvas
 import androidx.compose.foundation.clickable
 import androidx.compose.foundation.interaction.MutableInteractionSource
+import androidx.compose.foundation.layout.Box
+import androidx.compose.foundation.layout.fillMaxWidth
 import androidx.compose.foundation.layout.requiredSize
 import androidx.compose.foundation.layout.wrapContentSize
 import androidx.compose.material.icons.Icons
@@ -37,14 +39,19 @@ fun NeoPopCheckBoxSample() {
         mutableStateOf(false)
     }
 
-    NeoPopCheckBox(
-        checked = checked,
-        onCheckedChange = onCheckedChange,
-        size = 300.dp,
-        borderWidth = 30.dp,
-        checkedImageVector = Icons.Rounded.Done,
-        animationDurationInMillis = 3000,
-    )
+    Box(
+        contentAlignment = Alignment.Center,
+        modifier = Modifier.fillMaxWidth(),
+    ) {
+        NeoPopCheckBox(
+            checked = checked,
+            onCheckedChange = onCheckedChange,
+            size = 300.dp,
+            borderWidth = 30.dp,
+            checkedImageVector = Icons.Rounded.Done,
+            animationDurationInMillis = 3000,
+        )
+    }
 }
 
 @Composable
